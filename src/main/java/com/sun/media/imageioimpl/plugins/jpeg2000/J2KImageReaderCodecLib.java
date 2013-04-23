@@ -141,14 +141,15 @@ public class J2KImageReaderCodecLib extends ImageReader {
                          boolean seekForwardOnly,
                          boolean ignoreMetadata) {
         super.setInput(input, seekForwardOnly, ignoreMetadata);
-        this.ignoreMetadata = ignoreMetadata;
         iis = (ImageInputStream) input; // Always works
-        iis.mark(); // Mark the initial position.
         imageMetadata = null;
-        try {
-            this.streamPosition0 = iis.getStreamPosition();
-        } catch(IOException e) {
-            // XXX ignore
+        if (input != null) {
+            iis.mark(); // Mark the initial position.
+            try {
+                this.streamPosition0 = iis.getStreamPosition();
+            } catch(IOException e) {
+                // XXX ignore
+            }
         }
     }
 

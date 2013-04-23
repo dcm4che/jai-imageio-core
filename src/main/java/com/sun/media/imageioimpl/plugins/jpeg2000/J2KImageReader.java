@@ -310,14 +310,14 @@ public class J2KImageReader extends ImageReader implements MsgLogger {
                          boolean seekForwardOnly,
                          boolean ignoreMetadata) {
         super.setInput(input, seekForwardOnly, ignoreMetadata);
-        this.ignoreMetadata = ignoreMetadata;
         iis = (ImageInputStream) input; // Always works
         imageMetadata = null;
-        try {
-            this.streamPosition0 = iis.getStreamPosition();
-        } catch(IOException e) {
-            // XXX ignore
-        }
+        if (input != null)
+            try {
+                this.streamPosition0 = iis.getStreamPosition();
+            } catch(IOException e) {
+                // XXX ignore
+            }
     }
 
     /** Overrides the method defined in the superclass. */
