@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.sun.media</groupId>
   <artifactId>jai_imageio</artifactId>
-  <version>1.2</version>
+  <version>1.2-pre-dr-b04</version>
   <name>Java Advanced Imaging Image I/O Tools</name>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -11,13 +11,13 @@
     <dependency>
       <groupId>com.sun.media</groupId>
       <artifactId>clibwrapper_jiio</artifactId>
-      <version>1.2</version>
+      <version>1.2-pre-dr-b04</version>
     </dependency>
     <dependency>
       <groupId>com.sun.media</groupId>
       <artifactId>clib_jiio</artifactId>
       <type>zip</type>
-      <version>1.2</version>
+      <version>1.2-pre-dr-b04</version>
       <scope>runtime</scope>
     </dependency>
   </dependencies>
@@ -75,14 +75,17 @@
         <artifactId>maven-jar-plugin</artifactId>
         <version>2.3.2</version>
         <configuration>
-         <archive>
-            <manifest>
-              <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-            </manifest>
+          <archive>
             <manifestEntries>
-              <Extension-Name>${project.groupId}</Extension-Name>
-            </manifestEntries>
+              <Specification-Title>Java Advanced Imaging Image I/O Tools</Specification-Title>
+              <Specification-Version>1.2-pre-dr-b04</Specification-Version>
+              <Specification-Vendor>Sun Microsystems, Inc.</Specification-Vendor>
+              <Implementation-Title>com.sun.media.imageio</Implementation-Title>
+              <Implementation-Version>1.2-pre-dr-b04</Implementation-Version>
+              <Implementation-Vendor>Sun Microsystems, Inc.</Implementation-Vendor>
+              <Extension-Name>com.sun.media.imageio</Extension-Name>
+              <Sealed>true</Sealed>
+           </manifestEntries>
          </archive>
         </configuration>
       </plugin>
