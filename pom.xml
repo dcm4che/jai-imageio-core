@@ -84,6 +84,7 @@
               <Implementation-Version>1.2-pre-dr-b04</Implementation-Version>
               <Implementation-Vendor>Sun Microsystems, Inc.</Implementation-Vendor>
               <Extension-Name>com.sun.media.imageio</Extension-Name>
+              <SPI-Provider>javax.imageio.spi.ImageInputStreamSpi,javax.imageio.spi.ImageOutputStreamSpi,javax.imageio.spi.ImageReaderSpi,javax.imageio.spi.ImageWriterSpi</SPI-Provider>
               <Sealed>true</Sealed>
            </manifestEntries>
          </archive>
