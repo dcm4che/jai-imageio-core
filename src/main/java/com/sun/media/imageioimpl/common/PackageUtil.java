@@ -84,15 +84,17 @@ public class PackageUtil {
         }
 
         // Set version and vendor strings.
-        try {
-            Class thisClass =
-                Class.forName("com.sun.media.imageioimpl.common.PackageUtil");
-            Package thisPackage = thisClass.getPackage();
-            version = thisPackage.getImplementationVersion();
-            vendor = thisPackage.getImplementationVendor();
-	    specTitle = thisPackage.getSpecificationTitle();
-        } catch(ClassNotFoundException e) {
-        }
+        // umberto: commented out as those values were not correctly
+        // initialized by the OSGi classloader
+//        try {
+//            Class thisClass =
+//                Class.forName("com.sun.media.imageioimpl.common.PackageUtil");
+//            Package thisPackage = thisClass.getPackage();
+//            version = thisPackage.getImplementationVersion();
+//            vendor = thisPackage.getImplementationVendor();
+//	    specTitle = thisPackage.getSpecificationTitle();
+//        } catch(ClassNotFoundException e) {
+//        }
     }
 
     /**
